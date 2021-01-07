@@ -1,0 +1,20 @@
+.main-container {
+    display: grid;
+    grid-template-columns: 0;
+    justify-content: center;
+    margin-top: 100px;
+    background-color: white;
+}
+
+.cell {
+    border: 1px solid black;
+    width: 25px;
+    height: 25px;
+}
+
+.cell:hover {
+    border: 1px solid black;
+    width: 25px;
+    height: 25px;
+    background-color: orange;
+}

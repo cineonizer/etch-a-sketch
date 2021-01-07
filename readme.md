@@ -1,0 +1,1 @@
+Etch a sketch project from the odin project's foundation path
