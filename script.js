@@ -3,55 +3,40 @@ const mainContainer = document.querySelector('.main-container');
 function createGrid(size) {
     for (let i = 0; i < size ** 2; i++) {
         let div = document.createElement('div');
-        mainContainer.appendChild(div).className = 'cell';
-        mainContainer.style.gridTemplateColumns = 'repeat(' + size + ', auto)';
+        mainContainer.appendChild(div).classList = 'cell';
+        mainContainer.style.gridTemplateRows = `repeat(${size}, 1fr)`;
+        mainContainer.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
     }
 }
 
 function changeCellColor() {
-    const cells = document.querySelectorAll('.cell');
-
-    // changes the cell's color that was first clicked on otherwise
-    // the cells' colors start changing at the first mouseover event
-    cells.forEach(cells => {
-        cells.addEventListener('click', function() {
-            cells.style.backgroundColor = 'orange';
-        });
-    });
-
-    mainContainer.addEventListener('mousedown', mousedown);
-}
-
-function mousedown(event) {
+    let mouseDown = false;
     const cells = document.querySelectorAll('.cell');
     cells.forEach(cells => {
-        cells.addEventListener('mouseover', function() {
-            cells.style.backgroundColor = 'orange';
+        cells.addEventListener('mousedown', () => {
+            cells.style.backgroundColor = "orange";
+            mouseDown = true;
         });
     });
-}
-
-function mouseup(event) {
-    const cells = document.querySelectorAll('.cell');
     cells.forEach(cells => {
-        cells.addEventListener('mouseover', function() {
-            cells.style.backgroundColor = 'orange';
+        cells.addEventListener('mousemove', () => {
+            if (mouseDown === true) {
+                cells.style.backgroundColor = "orange";
+            }
         });
     });
+    window.addEventListener('mouseup', () => {
+        mouseDown = false;
+    });
 }
-
 
 function clearGrid() {
     const clear = document.querySelector('#clear-button');
-    const cells = document.querySelectorAll('.cell');
+    const allDivs = [...mainContainer.children];
     clear.addEventListener('click', function() {
-        cells.forEach(cells => {
-            cells.style.backgroundColor = 'white';
+        allDivs.forEach(allDivs => {
+            allDivs.style.backgroundColor = '';
         });
-
-
-        location.reload();
-
     });
 }
 

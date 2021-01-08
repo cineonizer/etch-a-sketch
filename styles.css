@@ -1,20 +1,21 @@
+#clear-button {
+    text-align: center;
+    margin-top: 100px;
+}
+
 .main-container {
     display: grid;
-    grid-template-columns: 0;
     justify-content: center;
-    margin-top: 100px;
-    background-color: white;
+    align-content: center;
+    width: 500px;
+    height: 500px;
+    margin: 50px auto;
 }
 
 .cell {
     border: 1px solid black;
-    width: 25px;
-    height: 25px;
 }
 
 .cell:hover {
-    border: 1px solid black;
-    width: 25px;
-    height: 25px;
     background-color: orange;
 }
