@@ -6,6 +6,16 @@ function resetGrid() {
     }
 }
 
+function playMusic() {
+    const audio = document.querySelector('#bobross');
+    const bobButton = document.querySelector('#bob-button');
+    bobButton.addEventListener('click', () => {
+        audio.currentTime = 0;
+        audio.volume = 0.25;
+        audio.play();
+    });
+}
+
 function toggleGridlines() {
     const allDivs = [...mainContainer.children];
     allDivs.forEach(allDivs => {
@@ -26,11 +36,9 @@ function changeGridText() {
     gridSizeText.addEventListener('click', () => {
         gridSizeText.textContent = "Size";
     });
-    return gridSizeValue;
 }
 
 function createGrid() {
-    changeGridText();
     const gridSizeValue = document.querySelector('#grid-slider').value;
     for (let i = 0; i < gridSizeValue ** 2; i++) {
         let cellDiv = document.createElement('div');
@@ -42,28 +50,55 @@ function createGrid() {
 
 function changeCellColor() {
     const colorButton = document.querySelector('#color-button');
-    let cellColor = colorButton.value;
+    let pickedColor = colorButton.value;
+    let isColorPicked = true;
+    let isRandomPicked = false;
+
     colorButton.addEventListener('input', () => {
-        cellColor = colorButton.value;
+        isColorPicked = true;
+        isRandomPicked = false;
+        pickedColor = colorButton.value;
+    });
+
+    let randomColor = '#';
+    const randomButton = document.querySelector('#random-button');
+    randomButton.addEventListener('click', () => {
+        isColorPicked = false;
+        isRandomPicked = true;        
     });
 
     let mouseDown = false;
-    let hoverState = true;
     const cells = document.querySelectorAll('.cell');
 
     cells.forEach(cells => {
+        cells.addEventListener('mouseenter', () => {
+            if (isRandomPicked) {
+                randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+            }
+        });
+
         cells.addEventListener('mousedown', () => {
-            cells.style.backgroundColor = cellColor;
+            if (isColorPicked) {
+                cells.style.backgroundColor = pickedColor;
+            }
+            else if (isRandomPicked) {
+                cells.style.backgroundColor = randomColor;
+            }
             mouseDown = true;
         });
 
         cells.addEventListener('mousemove', () => {
             if (mouseDown === true) {
-                cells.style.backgroundColor = cellColor;
+                if (isColorPicked) {
+                    cells.style.backgroundColor = pickedColor;
+                }
+                else if (isRandomPicked) {
+                    cells.style.backgroundColor = randomColor;
+                }
             }
         });
-
     });
+
     window.addEventListener('mouseup', () => {
         mouseDown = false;
     });
@@ -79,6 +114,7 @@ function clearGrid() {
     });
 }
 
+playMusic();
 resetGrid();
 changeGridText();
 createGrid();

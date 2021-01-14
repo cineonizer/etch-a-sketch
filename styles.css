@@ -83,7 +83,7 @@ input[type="range"]::-webkit-slider-thumb {
     cursor: pointer;
 }
 
-#grid-slider{
+input[type="range"] {
     width: 75%;
     height: 2px;
     background-color: gray;
