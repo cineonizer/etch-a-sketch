@@ -1,6 +1,34 @@
-#clear-button {
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #EEEDEC;
+}
+
+h1 {
+    font-size: 75px;
     text-align: center;
-    margin-top: 100px;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    color: #EEEDEC;
+    position: relative;
+    bottom: 25px;
+    cursor: default;
+}
+
+.buttons-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    width: 500px;
+    position: relative;
+    bottom: 40px;
+}
+
+button {
+    height: 20px;
+}
+
+#color-button {
+    height: 20px;
 }
 
 .main-container {
@@ -9,13 +37,61 @@
     align-content: center;
     width: 500px;
     height: 500px;
-    margin: 50px auto;
+    margin: 20px auto 50px;
+    cursor: url(images/cursor.png) 4 12, default;
+    background-color: white;
+    position: relative;
+    bottom: 40px;
 }
 
 .cell {
     border: 1px solid black;
+    outline: 1px solid gray;
 }
 
-.cell:hover {
-    background-color: orange;
+.cell-shadow:hover {
+    box-shadow: 1px 1px 10px 1px #aaaaaa;
+    transition:.03s ease-in-out;
+}
+
+.slider-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: auto;
+    width: 500px;
+    text-align: center;
+    position: relative;
+    bottom: 70px;
+}
+
+input[type="range"] {
+    width: 75%;
+    height: 2px;
+    background: black;
+    appearance: none;
+    outline: none;
+    border-radius: 2px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    appearance: square;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: black;
+    cursor: pointer;
+}
+
+#grid-slider{
+    width: 75%;
+    height: 2px;
+    background-color: gray;
+    border-radius: 2px;
+    top: 12px;
+    left: 0;
+}
+
+#grid-text {
+    width: 10.5%;
 }

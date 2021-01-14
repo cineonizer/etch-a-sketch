@@ -7,12 +7,18 @@
         <script src="script.js" defer></script>
     </head>
     <body>
+        <h1>ETCH - A - SKETCH</h1>
         <div class="buttons-container">
-            <div id="clear-button">
-                <button>Clear</button>
-            </div>
+            <button id="clear-button">Clear</button>
+            <input id="color-button" type="color" value="#000000">
+            <button id="gridlines-button" onclick="toggleGridlines();">Lines</button>
         </div>
         <div class="main-container">
+        </div>
+        <div class="slider-container">
+            <input type="range" min="1" max="64" 
+                value="16" step="1" id="grid-slider" oninput="changeGridText();">
+            <button id="grid-text" onclick="resetGrid(); createGrid(); changeCellColor(); clearGrid();">Grid Size:</button> 
         </div>
     </body>
 </html>
