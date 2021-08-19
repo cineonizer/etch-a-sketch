@@ -12,7 +12,7 @@ Click [here](https://cineonizer.github.io/etch-a-sketch/) for a live preview of 
 
 ## Goal
 
-Create a browser version of the toy sketchpad/etch-a-sketch.
+Create a browser version of the toy sketchpad/Etch-A-Sketch.
 
 ## Built With
 
