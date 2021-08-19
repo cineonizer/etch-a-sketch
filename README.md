@@ -22,7 +22,7 @@ Create a browser version of the toy sketchpad/Etch-A-Sketch.
 
 ## Learning Outcomes
 
-* Used CSS Grids to display the cells.
+* Used CSS Grids and Flex to display the cells.
 * More understanding of the organization of HTML elements.
 * Practiced more with DOM manipulation, and DOM methods, especially working multiple mouse EventListeners.
 * Familiarized myself with the Chrome developer tools.
