@@ -1,6 +1,6 @@
 # Etch-a-Sketch
 
-This is the [Etch-A-Sketch](https://www.theodinproject.com/courses/foundations/lessons/etch-a-sketch-project) project from the curriculum of [The Odin Project's Foundation Path](https://www.theodinproject.com/paths/foundations/courses/foundations).
+This is the [Etch-a-Sketch](https://www.theodinproject.com/courses/foundations/lessons/etch-a-sketch-project) project from the curriculum of [The Odin Project's Foundation Path](https://www.theodinproject.com/paths/foundations/courses/foundations).
 
 #### What is The Odin Project?
 
